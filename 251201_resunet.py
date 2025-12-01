@@ -89,16 +89,16 @@ class WaferDataset(Dataset):
         img_name_jpg = self.images[idx]
         img_name_png = img_name_jpg.replace('.jpg', '.png')
 
-        # 输入：JPG (暗角图)
+        # 输入：JPG 
         input_path = os.path.join(self.input_dir, img_name_jpg)
-        # 标签：PNG (干净图)
+        # 标签：PNG
         target_path = os.path.join(self.target_dir, img_name_png)
 
         try:
             input_img = Image.open(input_path).convert('RGB')
             target_img = Image.open(target_path).convert('RGB')
         except FileNotFoundError as e:
-            # 这是一个简单的容错处理
+
             raise FileNotFoundError(f"文件未找到：请确保 JPG/PNG 文件都已存在于相应路径。{e}")
 
         if self.transform:
