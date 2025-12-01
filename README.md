@@ -1,4 +1,5 @@
 251119_vigetting_label：标签图像生成文件，去除原始图像（raw_for_dl）的暗角，生成label_for_dl
+
 label_for_dl：标签图像（jpg格式）
 raw_for_dl：原始图像
 251201_resunet.py：主要的模型训练文件。采用Adam优化器进行参数更新，损失函数采用L2损失
